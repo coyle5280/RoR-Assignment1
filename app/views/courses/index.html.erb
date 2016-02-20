@@ -1,8 +1,29 @@
-<h1>Listing courses</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Ruby School On Rails</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="students">Students</a></li>
+      <li><a href="professors">Professors</a></li>
+      <li><a href="courses">Courses</a></li>
+      <li><a href="sections">Sections</a></li>
+    </ul>
+  </div>
+</nav>
+<h1 class="jumbotron">Listing Courses</h1>
+<div class="form-group">
+  <%= form_tag(search_courses_url, method: "get") do %>
+      <%=label_tag(:q, "Search for:")%>
+      <%= text_field_tag(:q) %>
+      <%=submit_tag("Search")%>
+  <% end %>
+</div>
 
-<table>
+<table class="table-striped table table-bordered">
   <thead>
-    <tr>
+    <tr class="">
       <th>Name</th>
       <th>Department</th>
       <th>Number</th>

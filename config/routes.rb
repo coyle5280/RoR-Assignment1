@@ -1,13 +1,28 @@
 Rails.application.routes.draw do
   resources :registrations
 
-  resources :sections
+  resources :sections do
+    collection do
+      get "search"
+    end
+  end
+  resources :courses do
+    collection do
+      get "search"
+    end
+  end
 
-  resources :courses
+  resources :professors do
+    collection do
+      get "search"
+    end
+  end
 
-  resources :professors
-
-  resources :students
+  resources :students do
+    collection do
+      get 'search'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

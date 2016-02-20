@@ -1,3 +1,7 @@
 class Professor < ActiveRecord::Base
-  belongs_to :student
+  has_many :sections
+
+  validates :name, presence: true
+  validates :name, length: {minimum: 3}
+  validates :name, length: {maximum: 30}
 end
